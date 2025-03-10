@@ -1,0 +1,100 @@
+{
+  "url": "https://www.qantasnewsroom.com.au",
+  "sanitizedPath": "/index",
+  "autoDetect": true,
+  "mapping": [
+    {
+      "id": "1",
+      "path": "/nav",
+      "sections": [
+        {
+          "id": "1-1",
+          "blocks": [
+            {
+              "id": "box-id--1102402271",
+              "color": "rgba(0, 0, 255, 1)",
+              "width": 1239,
+              "height": 142,
+              "xpath": "/html[1]/body[1]/div[2]",
+              "childrenXpaths": [
+                {
+                  "xpath": "/html[1]/body[1]/div[2]/div[1]",
+                  "xpathWithDetails": "id(\"_qantas_logo_search\")"
+                },
+                {
+                  "xpath": "/html[1]/body[1]/div[2]/div[2]",
+                  "xpathWithDetails": "id(\"_qantas_menu\")"
+                }
+              ],
+              "layout": {
+                "numCols": 1,
+                "numRows": 2
+              },
+              "x": 0,
+              "y": 0,
+              "mapping": "header",
+              "customBlockName": ""
+            }
+          ],
+          "settings": {}
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "path": "/index",
+      "sections": [
+        {
+          "id": "2-1",
+          "blocks": [],
+          "settings": {}
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "path": "/footer",
+      "sections": [
+        {
+          "id": "3-1",
+          "blocks": [
+            {
+              "id": "box-id--1102402240",
+              "x": 19,
+              "y": 157,
+              "width": 1200,
+              "height": 2036,
+              "xpath": "/html[1]/body[1]/div[3]",
+              "layout": {
+                "numCols": 1,
+                "numRows": 3
+              },
+              "childrenXpaths": [
+                {
+                  "xpath": "/html[1]/body[1]/div[3]/header[1]",
+                  "xpathWithDetails": "/html[@class=\"wf-europa-n7-active wf-europa-n4-active wf-europa-n3-active wf-active\"]/body[@class=\"home page-template-default page page-id-3700\"]/div[@class=\"container\"]"
+                },
+                {
+                  "xpath": "/html[1]/body[1]/div[3]/div[1]/div[1]",
+                  "xpathWithDetails": "id(\"main\")"
+                },
+                {
+                  "xpath": "/html[1]/body[1]/div[3]/div[1]/div[2]",
+                  "xpathWithDetails": "id(\"sidebar\")"
+                },
+                {
+                  "xpath": "/html[1]/body[1]/footer[1]/div[1]",
+                  "xpathWithDetails": "/html[@class=\"wf-europa-n7-active wf-europa-n4-active wf-europa-n3-active wf-active\"]/body[@class=\"home page-template-default page page-id-3700\"]/div[@class=\"footer-wrap\"]"
+                }
+              ],
+              "color": "rgb(0, 0, 255)",
+              "mapping": "defaultContent",
+              "customBlockName": ""
+            }
+          ],
+          "settings": {}
+        }
+      ]
+    }
+  ]
+}
