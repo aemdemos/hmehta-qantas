@@ -1,4 +1,3 @@
-
 .cards-wrapper {
   display: flex;
   flex-direction: column; /* Stack top-level elements vertically */
@@ -7,8 +6,7 @@
 
 .cards-wrapper > .cards.block {
   display: flex; /* Use flexbox for the overall card container */
-  flex-wrap: wrap; /* Allow cards to wrap into multiple rows */
-  flex-direction: row; /* Ensure cards are side-by-side */
+  flex-flow: row wrap; /* Allow cards to wrap into multiple rows */ /* Ensure cards are side-by-side */
   justify-content: center; /* Center align all cards */
   gap: 16px; /* Reduce spacing between cards to match original layout */
   padding: 0;
@@ -17,8 +15,7 @@
 
 .cards-wrapper > .cards.block > ul {
   display: flex; /* Ensure the list acts as a flex container */
-  flex-wrap: wrap; /* Wrap the cards into multiple rows */
-  flex-direction: row; /* Ensure cards are side-by-side */
+  flex-flow: row wrap; /* Wrap the cards into multiple rows */ /* Ensure cards are side-by-side */
   justify-content: center; /* Center align the cards horizontally */
   gap: 16px; /* Reduce spacing between cards to match original layout */
   padding: 0;
@@ -38,35 +35,40 @@
 }
 
 .cards-wrapper > .cards.block > ul > li > .cards-card-image {
-  width: 100%; /* Ensure the image spans full width */
+  width: 100%;
+  display: block; /* Add this to remove inline element spacing */
+  line-height: 0; /* Add this to remove any line-height gaps */
 }
 
 .cards-wrapper > .cards.block > ul > li img {
-  width: 100%; /* Ensure the image spans full width */
-  height: auto; /* Maintain natural aspect ratio */
-  object-fit: cover; /* Ensure the image fills its container */
-  margin: 0; /* Remove any margin around the image */
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  margin: 0;
+  display: block; /* Add this to remove inline element spacing */
 }
 
-.cards-wrapper > .cards.block > ul > li > .cards-card-body {
-  background-color: red; /* Add solid red background */
-  text-align: center; /* Center-align text */
-  color: white; /* White text for contrast */
-  font-weight: bold; /* Bold text */
-  text-transform: uppercase; /* Make text all caps */
-  font-size: 1.4em; /* Increase font size slightly for emphasis */
-  padding: 12px 0; /* Reduce padding inside the red bar */
-  margin: 0; /* Ensure no gap between image and card body */
+.cards-wrapper>.cards.block>ul>li>.cards-card-body {
+  margin: 0;
+  background-color: #eb000a;
+  color: #fff;
+  padding: 10px;
+  font-size: 0.9rem;
+  text-transform: uppercase;
 }
 
-@media (max-width: 768px) {
+.cards-wrapper>.cards.block>ul>li>.cards-card-body p {
+  margin: 0.3rem;
+}
+
+@media (width <= 768px) {
   .cards-wrapper > .cards.block > ul > li {
-    flex: 0 1 calc(50% - 16px); /* Two columns for smaller screens */
+    flex: 0 1 calc(50% - 16px);
   }
 }
 
-@media (max-width: 480px) {
+@media (width <= 580px) {
   .cards-wrapper > .cards.block > ul > li {
-    flex: 0 1 100%; /* Single column for mobile screens */
+    flex: 0 1 100%;
   }
 }
