@@ -1,27 +1,57 @@
-.cards > ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
-  grid-gap: 24px;
+
+.cards-wrapper > .cards.block {
+  display: flex; /* Create the overall layout container */
+  flex-wrap: wrap; /* Allow items to wrap into rows */
+  justify-content: center; /* Center align all cards */
+  gap: 16px; /* Reduce spacing between cards */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margin */
 }
 
-.cards > ul > li {
-  border: 1px solid #dadada;
-  background-color: var(--background-color);
+.cards-wrapper > .cards.block > ul {
+  display: flex; /* Use flexbox for the list */
+  flex-direction: row; /* Position cards side by side */
+  flex-wrap: wrap; /* Ensure wrapping into multiple rows */
+  justify-content: center; /* Center align the cards horizontally */
+  gap: 16px; /* Reduce spacing between cards */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margin */
+  list-style: none; /* Remove list styling */
 }
 
-.cards .cards-card-body {
-  margin: 16px;
+.cards-wrapper > .cards.block > ul > li {
+  display: flex; /* Make each card a flex container */
+  flex-direction: column; /* Stack image and title vertically */
+  flex: 0 1 calc(33.333% - 16px); /* Fixed card width for three columns */
+  box-sizing: border-box; /* Ensure consistent sizing */
+  background-color: transparent; /* Remove default background */
+  border: none; /* Remove default border */
 }
 
-.cards .cards-card-image {
-  line-height: 0;
+.cards-wrapper > .cards.block > ul > li img {
+  width: 100%; /* Image fills the card width */
+  height: auto; /* Maintain natural aspect ratio */
+  object-fit: cover; /* Ensure the image fills its container */
 }
 
-.cards > ul > li img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
+.cards-wrapper > .cards.block .cards-card-body {
+  background-color: red; /* Add solid red background */
+  text-align: center; /* Center-align text */
+  color: white; /* White text for contrast */
+  font-weight: bold; /* Bold text */
+  padding: 16px; /* Adjust padding inside the red bar */
+  margin: 0; /* Remove margin */
+  width: 100%; /* Ensure the title bar spans the full width of the card */
+}
+
+@media (max-width: 768px) {
+  .cards-wrapper > .cards.block > ul > li {
+    flex: 0 1 calc(50% - 16px); /* Two columns for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .cards-wrapper > .cards.block > ul > li {
+    flex: 0 1 100%; /* Single column for mobile screens */
+  }
 }
