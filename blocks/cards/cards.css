@@ -10,8 +10,7 @@
 
 .cards-wrapper > .cards.block > ul {
   display: flex; /* Use flexbox for the list */
-  flex-direction: row; /* Position cards side by side */
-  flex-wrap: wrap; /* Ensure wrapping into multiple rows */
+  flex-flow: row wrap; /* Position cards side by side */ /* Ensure wrapping into multiple rows */
   justify-content: center; /* Center align the cards horizontally */
   gap: 16px; /* Reduce spacing between cards */
   padding: 0; /* Remove padding */
@@ -44,13 +43,13 @@
   width: 100%; /* Ensure the title bar spans the full width of the card */
 }
 
-@media (max-width: 768px) {
+@media (width <= 768px) {
   .cards-wrapper > .cards.block > ul > li {
     flex: 0 1 calc(50% - 16px); /* Two columns for smaller screens */
   }
 }
 
-@media (max-width: 480px) {
+@media (width <= 480px) {
   .cards-wrapper > .cards.block > ul > li {
     flex: 0 1 100%; /* Single column for mobile screens */
   }
