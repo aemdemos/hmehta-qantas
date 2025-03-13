@@ -1,27 +1,72 @@
-.cards > ul {
-  list-style: none;
-  margin: 0;
+
+.cards-wrapper {
+  display: flex;
+  flex-direction: column; /* Stack top-level elements vertically */
+  gap: 40px; /* Space between the top section and the card grid */
+}
+
+.cards-wrapper > .cards.block {
+  display: flex; /* Use flexbox for the overall card container */
+  flex-wrap: wrap; /* Allow cards to wrap into multiple rows */
+  flex-direction: row; /* Ensure cards are side-by-side */
+  justify-content: center; /* Center align all cards */
+  gap: 16px; /* Reduce spacing between cards to match original layout */
   padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
-  grid-gap: 24px;
+  margin: 0;
 }
 
-.cards > ul > li {
-  border: 1px solid #dadada;
-  background-color: var(--background-color);
+.cards-wrapper > .cards.block > ul {
+  display: flex; /* Ensure the list acts as a flex container */
+  flex-wrap: wrap; /* Wrap the cards into multiple rows */
+  flex-direction: row; /* Ensure cards are side-by-side */
+  justify-content: center; /* Center align the cards horizontally */
+  gap: 16px; /* Reduce spacing between cards to match original layout */
+  padding: 0;
+  margin: 0;
+  list-style: none; /* Remove default list styling */
 }
 
-.cards .cards-card-body {
-  margin: 16px;
+.cards-wrapper > .cards.block > ul > li {
+  display: flex; /* Make each card a flex container */
+  flex-direction: column; /* Stack image and red card body vertically */
+  flex: 0 1 calc(33.333% - 16px); /* Fixed card width for three columns */
+  box-sizing: border-box; /* Ensure consistent sizing */
+  background-color: white; /* Add a white background for cards */
+  overflow: hidden; /* Prevent overflow */
+  border-radius: 0; /* Remove rounded corners */
+  margin: 0; /* Remove unnecessary margins */
 }
 
-.cards .cards-card-image {
-  line-height: 0;
+.cards-wrapper > .cards.block > ul > li > .cards-card-image {
+  width: 100%; /* Ensure the image spans full width */
 }
 
-.cards > ul > li img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
+.cards-wrapper > .cards.block > ul > li img {
+  width: 100%; /* Ensure the image spans full width */
+  height: auto; /* Maintain natural aspect ratio */
+  object-fit: cover; /* Ensure the image fills its container */
+  margin: 0; /* Remove any margin around the image */
+}
+
+.cards-wrapper > .cards.block > ul > li > .cards-card-body {
+  background-color: red; /* Add solid red background */
+  text-align: center; /* Center-align text */
+  color: white; /* White text for contrast */
+  font-weight: bold; /* Bold text */
+  text-transform: uppercase; /* Make text all caps */
+  font-size: 1.4em; /* Increase font size slightly for emphasis */
+  padding: 12px 0; /* Reduce padding inside the red bar */
+  margin: 0; /* Ensure no gap between image and card body */
+}
+
+@media (max-width: 768px) {
+  .cards-wrapper > .cards.block > ul > li {
+    flex: 0 1 calc(50% - 16px); /* Two columns for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .cards-wrapper > .cards.block > ul > li {
+    flex: 0 1 100%; /* Single column for mobile screens */
+  }
 }
