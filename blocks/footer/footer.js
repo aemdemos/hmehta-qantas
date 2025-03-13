@@ -19,7 +19,7 @@ export default async function decorate(block) {
   // Add specific classes to sections
   const sections = footer.querySelectorAll('.section');
   const sectionClasses = ['logos', 'left-nav', 'useful-links', 'copyright'];
-  
+
   sections.forEach((section, index) => {
     if (index < sectionClasses.length) {
       section.classList.add(sectionClasses[index]);
@@ -31,7 +31,7 @@ export default async function decorate(block) {
   if (logosSection) {
     const socialIconsWrapper = document.createElement('div');
     socialIconsWrapper.className = 'social-icons-wrapper';
-    
+
     // Move all paragraphs except the first one (logo) into the wrapper
     const paragraphs = Array.from(logosSection.querySelectorAll('p'));
     paragraphs.forEach((p, index) => {
@@ -60,7 +60,7 @@ export default async function decorate(block) {
         socialIconsWrapper.appendChild(p);
       }
     });
-    
+
     logosSection.appendChild(socialIconsWrapper);
   }
 
