@@ -21,21 +21,20 @@
   flex: 1;
 }
 
+.footer>div>.section.useful-links {
+  display: flex;
+  justify-content: flex-end;
+}
+
 /* Put left-nav and useful-links in same row */
 .footer>div>.section.logos+.section.left-nav+.section.useful-links {
   margin-top: -82px;
-  /* Adjust to align with left-nav */
 }
 
 /* Create a flex container for nav sections */
 .footer>div>.section.left-nav {
   display: flex;
   justify-content: flex-start;
-}
-
-.footer>div>.section.useful-links {
-  display: flex;
-  justify-content: flex-end;
 }
 
 /* Adjust the width of nav sections */
@@ -53,16 +52,25 @@
 /* Logos section */
 .footer .logos {
   border-bottom: 1px solid #999;
-  /* Add divider line */
 }
 
-/* Logo styles */
-.footer .logos p:first-child {
+/* Remove extra spacing */
+.footer p,
+.footer .button-container {
   margin: 0;
 }
 
+.footer .copyright p {
+  color: #e6e6e6;
+  font-size: 12px;
+}
+
+.footer .logos p:first-child {
+  margin: 0 0 30px;
+}
+
 .footer .logos p:first-child img {
-  width: 70px;
+  width: 65px;
   height: auto;
 }
 
@@ -70,7 +78,6 @@
 .footer .logos .social-icons-wrapper {
   display: flex;
   gap: 12px;
-  /* Reduced from 16px to bring icons closer */
   margin-left: auto;
 }
 
@@ -83,9 +90,7 @@
   display: inline-flex;
   cursor: pointer;
   font-size: 0;
-  /* Hide text */
   margin: 0;
-  /* Remove any default margins */
 }
 
 /* Style for the actual icons */
@@ -95,7 +100,7 @@
 .footer .logos p.fa-linkedin::before,
 .footer .logos p.fa-youtube::before {
   display: inline-block;
-  font: normal normal normal 20px/1 FontAwesome;
+  font: normal normal normal 20px/1 FontAwesome, sans-serif;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -125,7 +130,7 @@
 
 /* Hover effect */
 .footer .logos p[class*="fa-"]:hover::before {
-  color: #E40000;
+  color: #e40000;
   transition: color 0.3s ease;
 }
 
@@ -136,16 +141,17 @@
 }
 
 .footer .left-nav .button {
-  color: #E6E6E6;
+  color: #e6e6e6;
   text-decoration: none;
   font-size: 14px;
 }
 
 /* Useful links section */
 .footer .useful-links .default-content-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 1px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 1px;
+  width: 400px;
 }
 
 /* Style the "Useful Links" heading */
@@ -155,104 +161,20 @@
   color: #999;
   margin-bottom: 2px;
   width: 100%;
-}
-
-/* Create grid layout for links */
-.footer .useful-links .default-content-wrapper {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  /* 2 columns */
-  row-gap: 1px;
-  /* Space between rows */
-  width: 400px;
-  /* Adjust width as needed */
-}
-
-/* First paragraph (Useful Links text) should span both columns */
-.footer .useful-links .default-content-wrapper>p:first-child {
   grid-column: 1 / -1;
 }
 
 /* Style the links */
 .footer .useful-links .button {
-  color: #E6E6E6;
+  color: #e6e6e6;
   text-decoration: none;
   font-size: 14px;
   white-space: nowrap;
 }
 
-.footer .copyright p {
-  color: #E6E6E6;
-  font-size: 12px;
-}
-
 /* Hover effects for links */
 .footer .button:hover {
   text-decoration: underline;
-}
-
-/* Common styles for social media icons */
-.footer .logos p.fa-facebook,
-.footer .logos p.fa-twitter,
-.footer .logos p.fa-instagram,
-.footer .logos p.fa-linkedin,
-.footer .logos p.fa-youtube,
-.footer .logos .button-container.fa-facebook {
-  display: inline-block;
-  cursor: pointer;
-}
-
-/* Style for the actual icons */
-.footer .logos p.fa-facebook::before,
-.footer .logos p.fa-twitter::before,
-.footer .logos p.fa-instagram::before,
-.footer .logos p.fa-linkedin::before,
-.footer .logos p.fa-youtube::before,
-.footer .logos .button-container.fa-facebook a::before {
-  display: inline-block;
-  font: normal normal normal 20px/1 FontAwesome;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #999;
-}
-
-/* Individual icon unicode points */
-.footer .logos p.fa-facebook::before {
-  content: "\f09a";
-}
-
-.footer .logos p.fa-twitter::before {
-  content: "\f099";
-}
-
-.footer .logos p.fa-instagram::before {
-  content: "\f16d";
-}
-
-.footer .logos p.fa-linkedin::before {
-  content: "\f0e1";
-}
-
-.footer .logos p.fa-youtube::before {
-  content: "\f167";
-}
-
-/* Hide the text but keep the icon */
-.footer .logos p.fa-facebook,
-.footer .logos p.fa-twitter,
-.footer .logos p.fa-instagram,
-.footer .logos p.fa-linkedin,
-.footer .logos p.fa-youtube,
-.footer .logos .button-container.fa-facebook a {
-  font-size: 0;
-}
-
-/* Hover effect */
-.footer .logos p[class*="fa-"]:hover::before,
-.footer .logos .button-container.fa-facebook a:hover::before {
-  color: #E40000;
-  transition: color 0.3s ease;
 }
 
 /* Container for social icons */
@@ -263,62 +185,37 @@
   flex-wrap: wrap;
 }
 
-/* Remove extra spacing */
-.footer p {
-  margin: 0;
-}
-
-/* Fix button container spacing */
-.footer .button-container {
-  margin: 0;
-}
-
-/* Style for the Qantas logo */
-.footer .logos p:first-child {
-  margin: 0 0 30px 0;
-}
-
-.footer .logos p:first-child img {
-  width: 65px;
-  height: auto;
-}
-
 /* Responsive design */
-@media (max-width: 768px) {
-  /* Create grid layout for links */
-.footer .useful-links .default-content-wrapper {
-  width: 300px;
-}
+@media (width <=768px) {
+  .footer .useful-links .default-content-wrapper {
+    width: 300px;
+  }
 }
 
-@media (max-width: 580px) {
-  /* Hide useful links section */
+@media (width <=580px) {
   .footer .section.useful-links,
-  .footer > div > .section.useful-links {
+  .footer>div>.section.useful-links {
     display: none;
   }
 
-  /* Reset margin for left-nav */
-  .footer > div > .section.logos + .section.left-nav {
+  .footer>div>.section.logos+.section.left-nav {
     margin-top: 0;
   }
 
-  /* Create a wrapper div for social icons */
-.footer .logos .social-icons-wrapper {
-  margin-left: 10px;
-}
+  /* Logos section */
+  .footer .logos {
+    padding-bottom: 20px;
+  }
 
-
-  .footer > div > .section.left-nav {
-    justify-content: flex-start;
+  .footer .logos .social-icons-wrapper {
+    margin-left: 10px;
   }
 
   .footer .left-nav .default-content-wrapper {
     flex-direction: row;
     gap: 15px;
-}
+  }
 
-  /* Responsive design for logo section */
   .footer .logos .default-content-wrapper {
     flex-direction: column;
     align-items: flex-start;
