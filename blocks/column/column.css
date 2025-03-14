@@ -1,71 +1,78 @@
 
 .column-wrapper > .block {
-  display: flex; /* Use Flexbox for layout */
-  flex-direction: column; /* Stack main sections vertically */
-  gap: 24px; /* Add spacing between major sections */
-}
-
-.column-wrapper > .block > div:nth-child(2),
-.column-wrapper > .block > div:nth-child(3) {
-  display: flex; /* Align sections side by side */
-  flex-direction: row; /* Ensure sections are side by side */
-  gap: 32px; /* Add spacing between "Topics" and "Most Viewed" */
-}
-
-.column-wrapper > .block > div:nth-child(2) > div,
-.column-wrapper > .block > div:nth-child(3) > div {
-  flex: 1; /* Ensure both sections take equal space */
-  min-width: 300px; /* Prevent sections from shrinking too small */
+  display: flex; /* Use Flexbox for overall layout */
+  flex-direction: column; /* Stack major sections vertically */
+  gap: 32px; /* Add spacing between sections */
 }
 
 .column-wrapper > .block > div:nth-child(2) {
-  align-items: flex-start; /* Align items in the "Topics" section */
+  display: flex; /* Align elements side by side */
+  flex-direction: row; /* Ensure horizontal alignment */
+  justify-content: space-between; /* Separate heading and link */
+  align-items: flex-start; /* Align items at the top */
 }
 
-.column-wrapper .button-container a {
-  display: flex; /* Align icon and text side by side */
-  align-items: center; /* Center-align icon and text vertically */
-  gap: 8px; /* Add spacing between icon and text */
-  color: var(--text-color); /* Change link color to match text */
-  text-decoration: none; /* Remove underline from links */
-  font-size: 16px; /* Adjust font size for links */
+.column-wrapper > .block > div:nth-child(2) h1 {
+  margin: 0; /* Remove extra margin */
 }
 
-.column-wrapper .button-container a:hover {
-  text-decoration: underline; /* Add underline on hover */
-  color: var(--link-hover-color); /* Use hover color */
+.column-wrapper > .block > div:nth-child(2) .button-container {
+  display: flex; /* Ensure list items align horizontally */
+  flex-direction: row; /* Align icon and text horizontally */
+  align-items: center; /* Vertically align icon and text */
+  gap: 12px; /* Add spacing between icon and text */
 }
 
-.column-wrapper .button-container a::before {
+.column-wrapper > .block > div:nth-child(2) .button-container a {
+  display: flex; /* Align icon and text horizontally */
+  align-items: center; /* Vertically center items */
+  gap: 12px; /* Add consistent spacing */
+}
+
+.column-wrapper > .block > div:nth-child(2) .button-container a::before {
   content: ""; /* Placeholder for icon */
   display: inline-block;
   width: 24px;
   height: 24px;
-  border: 1px solid #000; /* Add a circular border for the icon */
-  border-radius: 50%; /* Make the icon circular */
-  background-color: #f8f8f8; /* Placeholder background color */
+  border: 1px solid var(--dark-color); /* Add border to icons */
+  border-radius: 50%; /* Make icons circular */
+  background-color: var(--light-color); /* Add background color */
 }
 
-.column-wrapper h1 {
-  font-size: var(--heading-font-size-l); /* Adjust heading size */
-  font-weight: bold;
-  margin-bottom: 16px; /* Add spacing below headings */
+.column-wrapper > .block > div:nth-child(3) {
+  display: flex; /* Use Flexbox for articles */
+  flex-direction: column; /* Stack articles vertically */
+  gap: 24px; /* Add spacing between articles */
 }
 
-.column-wrapper p {
-  font-size: 14px; /* Style metadata */
-  color: #666; /* Change metadata color to gray */
-  margin: 4px 0; /* Add spacing between metadata items */
+.column-wrapper > .block > div:nth-child(3) .button-container {
+  display: flex; /* Ensure articles align horizontally */
+  flex-direction: row; /* Align icon and text horizontally */
+  align-items: center; /* Vertically align icon and text */
+  gap: 12px; /* Add consistent spacing */
 }
 
-@media (max-width: 768px) {
-  .column-wrapper > .block > div:nth-child(2),
-  .column-wrapper > .block > div:nth-child(3) {
-    flex-direction: column; /* Stack sections vertically */
-  }
+.column-wrapper > .block > div:nth-child(3) .button-container a {
+  display: flex; /* Align icon and text horizontally */
+  align-items: center; /* Vertically center items */
+  gap: 12px; /* Add consistent spacing */
+}
 
-  .column-wrapper > .block > div:nth-child(2) > div,
-  .column-wrapper > .block > div:nth-child(3) > div {
-    flex: unset; /* Remove equal spacing rule for vertical stacking */
-  }
+.column-wrapper > .block > div:nth-child(3) .button-container a::before {
+  content: ""; /* Placeholder for icon */
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border: 1px solid var(--dark-color); /* Add border to icons */
+  border-radius: 50%; /* Make icons circular */
+  background-color: var(--light-color); /* Add background color */
+}
+
+.column-wrapper > .block > div:nth-child(3) p {
+  margin: 0; /* Remove excess margin */
+  margin-top: 4px; /* Add small spacing above metadata */
+}
+
+.column-wrapper > .block > div {
+  margin-bottom: 32px; /* Add consistent spacing between sections */
 }
