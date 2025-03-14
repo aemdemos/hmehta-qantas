@@ -183,6 +183,18 @@
   ],
   "blocks": [
     {
+      "name": "Column",
+      "cluster": 9,
+      "instances": [
+        {
+          "url": "https://www.qantasnewsroom.com.au",
+          "urlHash": "4b507ebc843d1ddd9bad94de769306d884b416e8",
+          "uuid": "4b507ebc-09-673b1192bf50f97452eeb1ca80827e636823b70d",
+          "xpath": "/html[1]/body[1]/div[3]/div[1]/div[2]"
+        }
+      ]
+    },
+    {
       "name": "Carousel (multiple)",
       "cluster": 1,
       "instances": [
@@ -431,18 +443,6 @@
           "urlHash": "be55da6290efe33d23ea35eed79b3f0fbb5a961f",
           "uuid": "be55da62-02-517a94db4be9e28b45ddc57a88330ab3a851dd0d",
           "xpath": "/html[1]/body[1]/div[3]/div[1]"
-        }
-      ]
-    },
-    {
-      "name": "Accordion",
-      "cluster": 9,
-      "instances": [
-        {
-          "url": "https://www.qantasnewsroom.com.au",
-          "urlHash": "4b507ebc843d1ddd9bad94de769306d884b416e8",
-          "uuid": "4b507ebc-09-673b1192bf50f97452eeb1ca80827e636823b70d",
-          "xpath": "/html[1]/body[1]/div[3]/div[1]/div[2]"
         }
       ]
     },
