@@ -183,6 +183,18 @@
   ],
   "blocks": [
     {
+      "name": "Cards",
+      "cluster": 14,
+      "instances": [
+        {
+          "url": "https://www.qantasnewsroom.com.au/roo-tales/",
+          "urlHash": "414b684339d0a040de81ce67d23f830afd06a45d",
+          "uuid": "414b6843-02-517a94db4be9e28b45ddc57a88330ab3a851dd0d",
+          "xpath": "/html[1]/body[1]/div[3]/div[1]"
+        }
+      ]
+    },
+    {
       "name": "Carousel (multiple)",
       "cluster": 1,
       "instances": [
@@ -491,18 +503,6 @@
           "urlHash": "4b507ebc843d1ddd9bad94de769306d884b416e8",
           "uuid": "4b507ebc-03-9e8a4be201a04664e6dfb29e21ae582d83b5ece6",
           "xpath": "/html[1]/body[1]/div[3]/div[1]/div[1]/div[1]/ul[1]/li[1]"
-        }
-      ]
-    },
-    {
-      "name": "Cards",
-      "cluster": 14,
-      "instances": [
-        {
-          "url": "https://www.qantasnewsroom.com.au/roo-tales/",
-          "urlHash": "414b684339d0a040de81ce67d23f830afd06a45d",
-          "uuid": "414b6843-02-517a94db4be9e28b45ddc57a88330ab3a851dd0d",
-          "xpath": "/html[1]/body[1]/div[3]/div[1]"
         }
       ]
     }
