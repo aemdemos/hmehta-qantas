@@ -1,0 +1,54 @@
+
+/* Balanced and Creative Improved Carousel Stylesheet */
+.carousel {
+  position: relative;
+  overflow: hidden; /* Prevents content overflow */
+  width: 100%; /* Ensures the carousel spans the full width of its container */
+  display: flex; /* Adds flexibility for alignment */
+  align-items: center; /* Ensures vertical centering of content */
+}
+
+.carousel .carousel-slides-container {
+  display: flex;
+  justify-content: center; /* Centers the slides */
+  align-items: center; /* Vertically centers the slides */
+  width: 100%; /* Ensures the container spans the full width */
+  height: auto; /* Dynamically adjusts height based on content */
+  padding: 0; /* Removes unnecessary padding */
+  background-color: transparent; /* Ensures a clean background */
+  position: relative; /* Allows precise positioning of slides */
+}
+
+.carousel .carousel-slides {
+  display: flex;
+  flex-wrap: nowrap; /* Prevents wrapping */
+  gap: 0; /* Removes spacing between slides */
+  margin: 0; /* Ensures alignment and eliminates extra space */
+  overflow: hidden; /* Prevents content overflow */
+  transform: translateX(0); /* Maintains alignment */
+  transition: transform 0.6s ease; /* Smooth and slightly slower transitions */
+}
+
+.carousel .carousel-slides img {
+  width: calc(100% - 1px); /* Ensures slides almost fully utilize container width */
+  height: auto; /* Maintains aspect ratio */
+  object-fit: cover; /* Fills the container without cropping */
+  margin: 0 auto; /* Centers images within slides */
+  display: block; /* Ensures predictable behavior */
+  flex-shrink: 0; /* Prevents shrinking during transitions */
+}
+
+.carousel .carousel-slides-container::before,
+.carousel .carousel-slides-container::after {
+  content: ""; /* Adds pseudo-elements for potential visual alignment */
+  display: none; /* Keeps layout clean by hiding unnecessary pseudo-elements */
+}
+
+.carousel .carousel-slides-container {
+  border: none; /* Removes all borders */
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05); /* Subtle shadow for a polished look */
+}
+
+.carousel .carousel {
+  padding: 0; /* Removes any default padding for consistency */
+}
