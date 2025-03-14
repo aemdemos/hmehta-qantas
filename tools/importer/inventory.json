@@ -183,7 +183,7 @@
   ],
   "blocks": [
     {
-      "name": "Carousel (multiple)",
+      "name": "Carousel",
       "cluster": 1,
       "instances": [
         {
