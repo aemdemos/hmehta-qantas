@@ -1,74 +1,79 @@
+
 .cards-wrapper {
-  display: flex;
-  flex-direction: column; /* Stack top-level elements vertically */
-  gap: 40px; /* Space between the top section and the card grid */
+  display: flex; /* Use flexbox for the outermost container */
+  flex-wrap: wrap; /* Allow wrapping into rows */
+  justify-content: space-between; /* Distribute cards evenly */
+  gap: 28px; /* Add spacing between rows and columns */
+  padding: 0;
+  margin: 0;
 }
 
 .cards-wrapper > .cards.block {
-  display: flex; /* Use flexbox for the overall card container */
-  flex-flow: row wrap; /* Allow cards to wrap into multiple rows */ /* Ensure cards are side-by-side */
-  justify-content: center; /* Center align all cards */
-  gap: 16px; /* Reduce spacing between cards to match original layout */
-  padding: 0;
-  margin: 0;
+  display: flex; /* Flexbox for the overall block container */
+  flex-wrap: wrap; /* Wrap cards into rows */
+  justify-content: space-between; /* Space cards evenly */
+  gap: 28px; /* Ensure consistent spacing */
 }
 
 .cards-wrapper > .cards.block > ul {
-  display: flex; /* Ensure the list acts as a flex container */
-  flex-flow: row wrap; /* Wrap the cards into multiple rows */ /* Ensure cards are side-by-side */
-  justify-content: center; /* Center align the cards horizontally */
-  gap: 16px; /* Reduce spacing between cards to match original layout */
+  display: flex; /* Flexbox for the list container */
+  flex-wrap: wrap; /* Allow wrapping into rows */
+  justify-content: space-between; /* Space cards evenly */
+  gap: 28px; /* Add spacing between rows and columns */
+  list-style: none; /* Remove default list styles */
   padding: 0;
   margin: 0;
-  list-style: none; /* Remove default list styling */
 }
 
 .cards-wrapper > .cards.block > ul > li {
-  display: flex; /* Make each card a flex container */
-  flex-direction: column; /* Stack image and red card body vertically */
-  flex: 0 1 calc(33.333% - 16px); /* Fixed card width for three columns */
-  box-sizing: border-box; /* Ensure consistent sizing */
-  background-color: white; /* Add a white background for cards */
+  flex: 0 1 calc(32% - 28px); /* Adjust card width for three cards per row with spacing */
+  display: flex; /* Use flexbox for individual cards */
+  flex-direction: column; /* Stack elements vertically inside cards */
+  box-sizing: border-box; /* Include padding/border in width */
+  background-color: var(--background-color); /* Add white background */
   overflow: hidden; /* Prevent overflow */
-  border-radius: 0; /* Remove rounded corners */
-  margin: 0; /* Remove unnecessary margins */
+  border-radius: 8px; /* Optional: Add rounded corners */
 }
 
 .cards-wrapper > .cards.block > ul > li > .cards-card-image {
-  width: 100%;
-  display: block; /* Add this to remove inline element spacing */
-  line-height: 0; /* Add this to remove any line-height gaps */
+  width: 100%; /* Full width for the image container */
+  display: flex; /* Flexbox to center the image */
+  justify-content: center; /* Center the image horizontally */
+  align-items: center; /* Center the image vertically */
 }
 
-.cards-wrapper > .cards.block > ul > li img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  margin: 0;
-  display: block; /* Add this to remove inline element spacing */
+.cards-wrapper > .cards.block > ul > li > .cards-card-image img {
+  width: 100%; /* Ensure the image spans the full width */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Ensure images fill their container */
+  display: block;
 }
 
-.cards-wrapper>.cards.block>ul>li>.cards-card-body {
-  margin: 0;
-  background-color: #eb000a;
-  color: #fff;
-  padding: 10px;
-  font-size: 0.9rem;
-  text-transform: uppercase;
+.cards-wrapper > .cards.block > ul > li > .cards-card-body {
+  width: 100%; /* Full width for the red bar */
+  background-color: #e00000; /* Red background for the text section */
+  color: #fff; /* White text color */
+  display: flex; /* Use flexbox for centering text */
+  justify-content: center; /* Center the text horizontally */
+  align-items: center; /* Center the text vertically */
+  text-transform: uppercase; /* Make text uppercase */
+  font-size: 1rem; /* Adjust font size */
+  padding: 20px; /* Add padding for spacing */
+  box-sizing: border-box;
 }
 
-.cards-wrapper>.cards.block>ul>li>.cards-card-body p {
-  margin: 0.3rem;
+.cards-wrapper > .cards.block > ul > li > .cards-card-body p {
+  margin: 0; /* Remove default margin from paragraph */
 }
 
-@media (width <= 768px) {
+@media (max-width: 768px) {
   .cards-wrapper > .cards.block > ul > li {
-    flex: 0 1 calc(50% - 16px);
+    flex: 0 1 calc(48% - 28px); /* Two cards per row with adequate spacing */
   }
 }
 
-@media (width <= 580px) {
+@media (max-width: 480px) {
   .cards-wrapper > .cards.block > ul > li {
-    flex: 0 1 100%;
+    flex: 0 1 calc(100% - 28px); /* One card per row for very small screens */
   }
 }
