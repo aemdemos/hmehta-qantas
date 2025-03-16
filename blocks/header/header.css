@@ -1,268 +1,318 @@
-/* header and nav layout */
-header .nav-wrapper {
-  background-color: var(--background-color);
-  width: 100%;
-  z-index: 2;
-  position: fixed;
-}
-
-header nav {
-  box-sizing: border-box;
-  display: grid;
-  grid-template:
-    'hamburger brand tools' var(--nav-height)
-    'sections sections sections' 1fr / auto 1fr auto;
-  align-items: center;
-  gap: 0 24px;
-  margin: auto;
-  max-width: 1248px;
-  height: var(--nav-height);
-  padding: 0 24px;
-  font-family: var(--body-font-family);
-}
-
-header nav[aria-expanded='true'] {
-  grid-template:
-    'hamburger brand' var(--nav-height)
-    'sections sections' 1fr
-    'tools tools' var(--nav-height) / auto 1fr;
-  overflow-y: auto;
-  min-height: 100dvh;
-}
-
-@media (width >= 900px) {
-  header nav {
-    display: flex;
-    justify-content: space-between;
-    gap: 0 32px;
-    max-width: 1264px;
-    padding: 0 32px;
-  }
-
-  header nav[aria-expanded='true'] {
-    min-height: 0;
-    overflow: visible;
-  }
-}
-
-header nav p {
+/* Reset */
+* {
   margin: 0;
-  line-height: 1;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-header nav a:any-link {
-  color: currentcolor;
+/* Main header container */
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
 }
 
-/* hamburger */
-header nav .nav-hamburger {
-  grid-area: hamburger;
-  height: 22px;
+/* Top white section */
+.nav-wrapper {
+  width: 100%;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+nav {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Brand section */
+.nav-brand {
+  width: 100%;
+  background: white;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-brand .default-content-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  padding: 1rem 2rem;
   display: flex;
   align-items: center;
+  gap: 2rem;
 }
 
-header nav .nav-hamburger button {
-  height: 22px;
+.nav-brand p {
+  display: inline-flex;
   margin: 0;
-  border: 0;
-  border-radius: 0;
-  padding: 0;
-  background-color: var(--background-color);
-  color: inherit;
-  overflow: initial;
-  text-overflow: initial;
-  white-space: initial;
 }
 
-header nav .nav-hamburger-icon,
-header nav .nav-hamburger-icon::before,
-header nav .nav-hamburger-icon::after {
-  box-sizing: border-box;
-  display: block;
-  position: relative;
-  width: 20px;
+.nav-brand .default-content-wrapper p:first-of-type img {
+  width: 181.66px;
+  height: 40px;
 }
 
-header nav .nav-hamburger-icon::before,
-header nav .nav-hamburger-icon::after {
-  content: '';
-  position: absolute;
-  background: currentcolor;
+.nav-brand .default-content-wrapper p:last-of-type img {
+  height: 30px;
+  width: auto;
 }
 
-header nav[aria-expanded='false'] .nav-hamburger-icon,
-header nav[aria-expanded='false'] .nav-hamburger-icon::before,
-header nav[aria-expanded='false'] .nav-hamburger-icon::after {
-  height: 2px;
-  border-radius: 2px;
-  background: currentcolor;
+/* Navigation section */
+.nav-sections {
+  width: 100%;
+  background: #323232;
+  display: flex;
+  justify-content: center;
 }
 
-header nav[aria-expanded='false'] .nav-hamburger-icon::before {
-  top: -6px;
+.nav-sections .default-content-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0.1rem 2rem;
+  position: static;
 }
 
-header nav[aria-expanded='false'] .nav-hamburger-icon::after {
-  top: 6px;
-}
-
-header nav[aria-expanded='true'] .nav-hamburger-icon {
-  height: 22px;
-}
-
-header nav[aria-expanded='true'] .nav-hamburger-icon::before,
-header nav[aria-expanded='true'] .nav-hamburger-icon::after {
-  top: 3px;
-  left: 1px;
-  transform: rotate(45deg);
-  transform-origin: 2px 1px;
-  width: 24px;
-  height: 2px;
-  border-radius: 2px;
-}
-
-header nav[aria-expanded='true'] .nav-hamburger-icon::after {
-  top: unset;
-  bottom: 3px;
-  transform: rotate(-45deg);
-}
-
-@media (width >= 900px) {
-  header nav .nav-hamburger {
-    display: none;
-    visibility: hidden;
-  }
-}
-
-/* brand */
-header .nav-brand {
-  grid-area: brand;
-  flex-basis: 128px;
-  font-size: var(--heading-font-size-s);
-  font-weight: 700;
-  line-height: 1;
-}
-
-header nav .nav-brand img {
-  width: 128px;
-  height: auto;
-}
-
-/* sections */
-header nav .nav-sections {
-  grid-area: sections;
-  flex: 1 1 auto;
-  display: none;
-  visibility: hidden;
-}
-
-header nav[aria-expanded='true'] .nav-sections {
-  display: block;
-  visibility: visible;
-  align-self: start;
-}
-
-header nav .nav-sections ul {
+.nav-sections ul {
   list-style: none;
-  padding-left: 0;
-  font-size: var(--body-font-size-s);
+  display: flex;
+  gap: 4rem;
+  margin: 0;
+  padding: 0;
 }
 
-header nav .nav-sections ul > li {
+.nav-sections li {
+  position: relative;
+}
+
+.nav-sections .nav-drop {
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+  display: block;
+  color: #fff;
+  padding: 22px 12px 21px;
+}
+
+.nav-sections .nav-drop > a {
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
   font-weight: 500;
 }
 
-header nav .nav-sections ul > li > ul {
-  margin-top: 0;
+/* Dropdown styling */
+.nav-drop > ul {
+  display: none;
+  position: fixed;
+  top: 147px;
+  left: 300px;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  padding: 1.5em 2em;
+  margin-top: 1px;
+  border-radius: 4px;
+  width: 1000px;
 }
 
-header nav .nav-sections ul > li > ul > li {
-  font-weight: 400;
+/* Show dropdown on hover */
+.nav-drop:hover > ul,
+.nav-drop:focus-within > ul {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 2em;
 }
 
-@media (width >= 900px) {
-  header nav .nav-sections {
+/* Update dropdown content styles */
+.nav-drop > ul > li {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  color: #333;
+}
+
+.nav-drop > ul > li > a {
+  color: #333;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+/* Update the dropdown arrow */
+.nav-drop > ul::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 24px;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid white;
+}
+
+/* Dropdown arrow */
+.nav-drop::after {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  position: absolute;
+  right: -5px;
+  top: 28px;
+}
+
+/* Mobile styles */
+@media (max-width: 899px) {
+  /* Show hamburger */
+  .nav-hamburger {
     display: block;
-    visibility: visible;
-    white-space: nowrap;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1001;
   }
 
-  header nav[aria-expanded='true'] .nav-sections {
-    align-self: unset;
-  }
-
-  header nav .nav-sections .nav-drop {
-    position: relative;
-    padding-right: 16px;
-    cursor: pointer;
-  }
-
-  header nav .nav-sections .nav-drop::after {
-    content: '';
-    display: inline-block;
-    position: absolute;
-    top: 0.5em;
-    right: 2px;
-    transform: rotate(135deg);
-    width: 6px;
-    height: 6px;
-    border: 2px solid currentcolor;
-    border-radius: 0 1px 0 0;
-    border-width: 2px 2px 0 0;
-  }
-
-  header nav .nav-sections .nav-drop[aria-expanded='true']::after {
-    top: unset;
-    bottom: 0.5em;
-    transform: rotate(315deg);
-  }
-
-  header nav .nav-sections ul {
-    display: flex;
-    gap: 24px;
-    margin: 0;
-  }
-
-  header nav .nav-sections .default-content-wrapper > ul > li {
-    flex: 0 1 auto;
-    position: relative;
-  }
-
-  header nav .nav-sections .default-content-wrapper > ul > li > ul {
+  /* Hide navigation by default */
+  .nav-sections .default-content-wrapper {
     display: none;
-    position: relative;
   }
 
-  header nav .nav-sections .default-content-wrapper > ul > li[aria-expanded='true'] > ul {
+  /* Show navigation when expanded */
+  nav[aria-expanded="true"] .nav-sections .default-content-wrapper {
     display: block;
-    position: absolute;
-    left: -24px;
-    width: 200px;
-    top: 150%;
-    padding: 16px;
-    background-color: var(--light-color);
-    white-space: initial;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #323232;
+    padding: 80px 20px 20px;
+    overflow-y: auto;
   }
 
-  header nav .nav-sections .default-content-wrapper > ul > li > ul::before {
+  /* Mobile navigation styles */
+  .nav-sections ul {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .nav-sections .nav-drop {
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  /* Mobile dropdown styles */
+  .nav-drop > ul {
+    position: static;
+    width: 100%;
+    box-shadow: none;
+    padding: 10px 0 10px 20px;
+    margin-top: 10px;
+    background: transparent;
+  }
+
+  .nav-drop > ul > li {
+    border-bottom: none;
+  }
+
+  .nav-drop > ul > li > a {
+    color: white;
+  }
+
+  /* Hide dropdown arrow in mobile */
+  .nav-drop > ul::before {
+    display: none;
+  }
+
+  /* Adjust mobile dropdown text */
+  .nav-drop > ul > li {
+    color: rgba(255,255,255,0.7);
+  }
+}
+
+/* Desktop styles */
+@media (min-width: 900px) {
+  .nav-hamburger {
+    display: none;
+  }
+  
+  .nav-drop > ul::before {
     content: '';
     position: absolute;
     top: -8px;
-    left: 16px;
-    width: 0;
-    height: 0;
+    left: 2rem;
     border-left: 8px solid transparent;
     border-right: 8px solid transparent;
-    border-bottom: 8px solid var(--light-color);
+    border-bottom: 8px solid #323232;
   }
 
-  header nav .nav-sections .default-content-wrapper > ul > li > ul > li {
-    padding: 8px 0;
+  .nav-drop:hover > ul,
+  .nav-drop:focus-within > ul {
+    display: block;
   }
+
 }
 
-/* tools */
-header nav .nav-tools {
-  grid-area: tools;
+/* Alternatively, you can add margin to the second picture */
+.nav-brand .default-content-wrapper p:last-of-type {
+  margin-left: 2rem;
+}
+
+/* Remove any other positioning rules that might interfere */
+.nav-sections li:not(:first-child) .nav-drop > ul {
+  left: 150px;
+}
+
+/* Hamburger button */
+.nav-hamburger button {
+  background: none;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.nav-hamburger-icon,
+.nav-hamburger-icon::before,
+.nav-hamburger-icon::after {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #333;
+  position: relative;
+  transition: all 0.3s;
+}
+
+.nav-hamburger-icon::before,
+.nav-hamburger-icon::after {
+  content: '';
+  position: absolute;
+}
+
+.nav-hamburger-icon::before {
+  top: -8px;
+}
+
+.nav-hamburger-icon::after {
+  bottom: -8px;
+}
+
+/* Hamburger animation when menu is open */
+nav[aria-expanded="true"] .nav-hamburger-icon {
+  background: transparent;
+}
+
+nav[aria-expanded="true"] .nav-hamburger-icon::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+nav[aria-expanded="true"] .nav-hamburger-icon::after {
+  transform: rotate(-45deg);
+  bottom: 0;
 }
