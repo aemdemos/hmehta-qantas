@@ -18,6 +18,7 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: "CiutadellaRegular";
 }
 
 /* Brand section */
@@ -95,44 +96,66 @@ nav {
   font-size: 17px;
   font-weight: 400;
   line-height: 27px;
-  font-family: "CiutadellaRegular";
   opacity: 0.85;
 }
 
 /* Dropdown styling - hide by default */
 .nav-drop > ul {
-  display: none; /* Ensure dropdowns are hidden by default */
+  display: none;
   position: fixed;
   top: 147px;
-  left: 300px;
+  left: 350px;
   background: white;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-  padding: 1.5em 2em;
-  margin-top: 1px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 2em;
   border-radius: 4px;
   width: 1000px;
 }
 
-/* Only show dropdown on hover */
+/* Show dropdown content with flex */
 .nav-drop:hover > ul {
-  display: flex;
-  align-items: flex-start;
+  display: flex !important;
   flex-wrap: wrap;
-  gap: 2em;
+  gap: 2rem;
 }
 
-/* Update dropdown content styles */
+/* Set width for each dropdown item */
 .nav-drop > ul > li {
-  padding: 0.75rem 0;
-  border-bottom: 1px solid rgba(0,0,0,0.1);
-  color: #333;
+  padding: 1rem 0;
+  color: #666;
+  font-size: 16px;
+  line-height: 1.4;
+  flex: 0 0 calc(25% - 1.5rem); /* 4 columns with gap consideration */
 }
 
 .nav-drop > ul > li > a {
   color: #333;
-  font-size: 14px;
-  font-weight: 500;
-  margin-bottom: 0.25rem;
+  font-size: 18px;
+  font-weight: 400;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.nav-sections a:hover {
+  color: #E3001B;
+}
+
+.nav-drop > ul > li > a::after {
+  content: '';
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border: solid #666;
+  border-width: 0 2px 2px 0;
+  transform: rotate(-45deg);
+  position: absolute;
+  right: 0;
+  top: 8px;
 }
 
 /* Update the dropdown arrow */
@@ -150,14 +173,14 @@ nav {
 .nav-drop::after {
   content: '';
   display: inline-block;
-  width: 8px;
-  height: 8px;
-  border: solid white;
+  width: 5px;
+  height: 5px;
+  border: solid #838282;
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
   position: absolute;
   right: -5px;
-  top: 28px;
+  top: 30px;
 }
 
 /* Mobile styles */
