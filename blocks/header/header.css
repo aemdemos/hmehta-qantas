@@ -34,7 +34,7 @@ nav {
   padding: 1rem 2rem;
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 2.5rem;
 }
 
 .nav-brand p {
@@ -43,12 +43,13 @@ nav {
 }
 
 .nav-brand .default-content-wrapper p:first-of-type img {
-  width: 181.66px;
+  width: 202px;
   height: 40px;
+  margin-left: 3rem;
 }
 
 .nav-brand .default-content-wrapper p:last-of-type img {
-  height: 30px;
+  height: 40px;
   width: auto;
 }
 
@@ -91,8 +92,11 @@ nav {
 .nav-sections .nav-drop > a {
   color: white;
   text-decoration: none;
-  font-size: 15px;
-  font-weight: 500;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 27px;
+  font-family: "CiutadellaRegular";
+  opacity: 0.85;
 }
 
 /* Dropdown styling - hide by default */
