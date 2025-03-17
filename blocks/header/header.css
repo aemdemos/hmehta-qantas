@@ -1,17 +1,7 @@
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 /* Main header container */
 .header {
   width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
+  position: relative;
 }
 
 /* Top white section */
@@ -105,9 +95,9 @@ nav {
   font-weight: 500;
 }
 
-/* Dropdown styling */
+/* Dropdown styling - hide by default */
 .nav-drop > ul {
-  display: none;
+  display: none; /* Ensure dropdowns are hidden by default */
   position: fixed;
   top: 147px;
   left: 300px;
@@ -119,9 +109,8 @@ nav {
   width: 1000px;
 }
 
-/* Show dropdown on hover */
-.nav-drop:hover > ul,
-.nav-drop:focus-within > ul {
+/* Only show dropdown on hover */
+.nav-drop:hover > ul {
   display: flex;
   align-items: flex-start;
   flex-wrap: wrap;
@@ -171,8 +160,7 @@ nav {
 @media (max-width: 899px) {
   /* Show hamburger */
   .nav-hamburger {
-    display: block;
-    position: fixed;
+    position: absolute;
     top: 20px;
     right: 20px;
     z-index: 1001;
@@ -180,20 +168,12 @@ nav {
 
   /* Hide navigation by default */
   .nav-sections .default-content-wrapper {
-    display: none;
+    display: none; /* Hide by default on mobile */
   }
 
   /* Show navigation when expanded */
   nav[aria-expanded="true"] .nav-sections .default-content-wrapper {
-    display: block;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: #323232;
-    padding: 80px 20px 20px;
-    overflow-y: auto;
+    display: block; /* Only show when hamburger is clicked */
   }
 
   /* Mobile navigation styles */
