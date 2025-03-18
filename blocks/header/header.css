@@ -376,6 +376,16 @@ nav[aria-expanded="true"] .nav-hamburger-icon::after {
   /* Show navigation when expanded */
   nav[aria-expanded="true"] .nav-sections .default-content-wrapper {
     display: block;
+    background: #323232;
+    color: white;
+    position: fixed;
+    top: 73px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow-y: auto;
+    z-index: 1000;
+    padding: 20px;
   }
 
   /* Mobile navigation styles */
@@ -384,7 +394,46 @@ nav[aria-expanded="true"] .nav-hamburger-icon::after {
     gap: 0;
   }
 
+  /* Default - hide in normal state */
   .nav-tools .button-container {
     display: none;
+  }
+  
+  /* Mobile Tools Menu Styling */
+  .mobile-tools-menu {
+    display: none; /* Hide by default */
+    margin-top: 30px;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #E6E6E6;
+  }
+  
+  /* Only show when navigation is expanded */
+  nav[aria-expanded="true"] .mobile-tools-menu {
+    display: block;
+  }
+  
+  .mobile-tools-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .mobile-tools-menu li {
+    padding: 5px 0;
+    border-top: 1px solid #E6E6E6;
+  }
+  
+  .mobile-tools-menu li:last-child {
+    border-bottom: none;
+  }
+  
+  .mobile-tools-menu a.button {
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+    text-transform: uppercase;
+    display: block;
+    padding: 5px 0;
   }
 }
