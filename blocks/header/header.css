@@ -329,28 +329,26 @@ nav[aria-expanded="true"] .nav-hamburger-icon::after {
   background: white;
   display: flex;
   justify-content: center;
+  font-family: "Europa";
 }
 
 .nav-tools .default-content-wrapper {
   width: 100%;
   max-width: 1200px;
-  padding: 0 2rem;
   display: flex;
   align-items: center;
-  gap: 1rem;
   border-bottom: 2px solid #9D9D9D;
 }
 
-.nav-tools h2 {
+.nav-tools .icon-logo-grey-news-room {
+  display: inline-block;
   margin: 0;
   padding: 1rem 0;
 }
 
-.nav-tools h2 a {
-  color: #333;
-  text-decoration: none;
-  font-size: 20px;
-  font-weight: 500;
+.nav-tools .icon-logo-grey-news-room img {
+  width: 120px;  /* Increased from default */
+  height: auto;  /* Maintain aspect ratio */
 }
 
 .nav-tools .button-container {
@@ -365,6 +363,10 @@ nav[aria-expanded="true"] .nav-hamburger-icon::after {
   color: #1c1d1e;
   border-bottom: 2px solid transparent;
   transition: border-color .3s ease-out;
+}
+
+.nav-tools .default-content-wrapper > p:first-child {
+  width: 140px; /* Match the image width */
 }
 
 @media (max-width: 899px) {
