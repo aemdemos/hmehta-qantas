@@ -286,13 +286,82 @@ nav[aria-expanded="true"] .nav-hamburger-icon::after {
 
 .nav-tools .default-content-wrapper>p:first-child {
   width: 140px;
+}
 
-  /* Match the image width */
+/* Desktop styles */
+.nav-hamburger {
+  display: none;
+}
+
+.nav-drop>ul::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 2rem;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid #323232;
+}
+
+.nav-drop:hover>ul,
+.nav-drop:focus-within>ul {
+  display: block;
+}
+
+@media (width <=1199px) {
+  header {
+    height: 89px;
+  }
+
+  .nav-sections {
+    display: none;
+  }
+
+  .nav-brand {
+    display: none;
+  }
+
+  .nav-tools .icon-logo-grey-news-room img {
+    display: none;
+  }
+
+  .nav-tools .icon-logo-grey-news-room::before {
+    content: '';
+    display: block;
+    width: 170px;
+    height: 83px;
+    background-image: url('../../icons/logo-with-news-grey.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-top: -30px;
+    margin-left: 15px;
+  }
+
+  /* Adjust container width for icon */
+  .nav-tools .default-content-wrapper>p:first-child {
+    width: 210px;
+  }
+
+  .nav-tools .button {
+    font-size: 12px;
+    display: inline-block;
+    padding: 35px 10px 30px;
+    text-transform: uppercase;
+    color: #1c1d1e;
+    border-bottom: 2px solid transparent;
+    transition: border-color .3s ease-out;
+  }
 }
 
 /* Mobile styles */
 @media (width <=899px) {
+  header {
+    height: 73px;
+  }
+
   .nav-hamburger {
+    display: block;
     position: absolute;
     top: 20px;
     right: 20px;
@@ -302,15 +371,11 @@ nav[aria-expanded="true"] .nav-hamburger-icon::after {
   /* Hide navigation by default */
   .nav-sections .default-content-wrapper {
     display: none;
-
-    /* Hide by default on mobile */
   }
 
   /* Show navigation when expanded */
   nav[aria-expanded="true"] .nav-sections .default-content-wrapper {
     display: block;
-
-    /* Only show when hamburger is clicked */
   }
 
   /* Mobile navigation styles */
@@ -319,61 +384,7 @@ nav[aria-expanded="true"] .nav-hamburger-icon::after {
     gap: 0;
   }
 
-  .nav-sections .nav-drop {
-    padding: 15px 0;
-    border-bottom: 1px solid rgb(255 255 255 / 10%);
-  }
-
-  /* Mobile dropdown styles */
-  .nav-drop>ul {
-    position: static;
-    width: 100%;
-    box-shadow: none;
-    padding: 10px 0 10px 20px;
-    margin-top: 10px;
-    background: transparent;
-  }
-
-  .nav-drop>ul>li>a {
-    color: white;
-  }
-
-  /* Hide dropdown arrow in mobile */
-  .nav-drop>ul::before {
+  .nav-tools .button-container {
     display: none;
-  }
-
-  /* Adjust mobile dropdown text */
-  .nav-drop>ul>li {
-    color: rgb(255 255 255 / 70%);
-    border-bottom: none;
-  }
-
-  .nav-tools {
-    display: none;
-
-    /* Hide the entire nav-tools section in mobile view */
-  }
-}
-
-/* Desktop styles */
-@media (width >=900px) {
-  .nav-hamburger {
-    display: none;
-  }
-
-  .nav-drop>ul::before {
-    content: '';
-    position: absolute;
-    top: -8px;
-    left: 2rem;
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-    border-bottom: 8px solid #323232;
-  }
-
-  .nav-drop:hover>ul,
-  .nav-drop:focus-within>ul {
-    display: block;
   }
 }
