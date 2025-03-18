@@ -1,0 +1,81 @@
+
+.topic-cards-wrapper {
+  display: flex; /* Create a flex container for the overall grid */
+  flex-wrap: wrap; /* Allow cards to wrap into multiple rows */
+  gap: 32px; /* Add spacing between cards */
+  justify-content: center; /* Center cards horizontally */
+  padding: 0;
+  margin: 0;
+}
+
+.topic-cards-wrapper > .topic-cards.block {
+  display: flex; /* Ensure the block acts as a flex container */
+  flex-wrap: wrap; /* Wrap cards into rows */
+  justify-content: center; /* Center-align cards within the block */
+  gap: 32px; /* Add spacing between cards */
+}
+
+.topic-cards-wrapper > .topic-cards.block > ul {
+  display: flex; /* Ensure the list acts as a flex container */
+  flex-wrap: wrap; /* Allow cards to wrap into rows */
+  justify-content: center; /* Center-align the cards horizontally */
+  gap: 32px; /* Add spacing between cards */
+  list-style: none; /* Remove default list styling */
+  padding: 0;
+  margin: 0;
+}
+
+.topic-cards-wrapper > .topic-cards.block > ul > li {
+  display: flex; /* Make each card a flex container */
+  flex-direction: column; /* Stack elements vertically */
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+  text-align: center; /* Ensure text is centered */
+  width: calc(25% - 32px); /* Adjust width for 4 cards per row */
+  box-sizing: border-box; /* Ensure consistent sizing */
+  background-color: transparent; /* Maintain transparent background */
+  overflow: hidden; /* Prevent overflow */
+  position: relative; /* Allow absolute positioning for text overlay */
+}
+
+.topic-cards-wrapper > .topic-cards.block > ul > li > .topic-cards-card-image {
+  width: 100%; /* Image spans full width */
+  height: 100%; /* Image spans full height of the card */
+  object-fit: cover; /* Ensure the image covers the area without stretching */
+}
+
+.topic-cards-wrapper > .topic-cards.block > ul > li > .topic-cards-card-body {
+  position: absolute; /* Position text overlay */
+  bottom: 10%; /* Position text near the bottom */
+  color: white; /* Set text color to white */
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7); /* Add shadow for better readability */
+  font-size: 1.2rem; /* Increase font size */
+  font-weight: bold; /* Make text bold */
+  text-align: center; /* Center-align text */
+  padding: 0; /* Remove padding */
+}
+
+.topic-cards-wrapper > .topic-cards.block > ul > li::before {
+  content: ''; /* Placeholder for icon */
+  width: 50px; /* Icon width */
+  height: 50px; /* Icon height */
+  background-color: white; /* Icon background color */
+  border-radius: 50%; /* Make icon circular */
+  display: block; /* Display icon */
+  position: absolute; /* Position icon overlay */
+  top: 10%; /* Position icon near the top */
+}
+
+@media (max-width: 768px) {
+  .topic-cards-wrapper > .topic-cards.block > ul > li {
+    width: calc(50% - 32px); /* Two cards per row on smaller screens */
+    height: 280px; /* Adjust height for smaller screens */
+  }
+}
+
+@media (max-width: 580px) {
+  .topic-cards-wrapper > .topic-cards.block > ul > li {
+    width: 100%; /* One card per row on very small screens */
+    height: 260px; /* Adjust height for very small screens */
+  }
+}
