@@ -1,4 +1,3 @@
-
 .roo-cards-wrapper {
   display: flex;
   flex-wrap: wrap; /* Allow wrapping to multiple rows */
@@ -13,6 +12,7 @@
   flex-wrap: wrap; /* Ensure cards wrap into multiple rows */
   justify-content: flex-start; /* Align cards to the left */
   gap: 24px; /* Space between cards */
+  width: 100%; /* Ensure full width */
 }
 
 .roo-cards-wrapper > .roo-cards.block > ul {
@@ -23,12 +23,13 @@
   padding: 0; /* Remove padding from the list */
   margin: 0; /* Remove default margin */
   list-style: none; /* Remove list styling */
+  width: 100%; /* Ensure full width */
 }
 
 .roo-cards-wrapper > .roo-cards.block > ul > li {
   display: flex; /* Ensure each card is a flex container */
   flex-direction: column; /* Stack elements vertically within the card */
-  flex: 0 1 calc(48% - 24px); /* Two cards per row with proper spacing */
+  flex: 0 1 calc(33.33% - 16px); /* Changed to 33.33% for 3 cards per row */
   box-sizing: border-box; /* Ensure consistent sizing */
   background-color: white; /* White background for cards */
   border: 1px solid #ccc; /* Add a border for separation */
@@ -38,7 +39,7 @@
 
 .roo-cards-wrapper > .roo-cards.block > ul > li > .roo-cards-card-image {
   width: 100%; /* Make the image span the full width */
-  aspect-ratio: 16/9; /* Restore original vertical aspect ratio */
+  aspect-ratio: 16/9; /* Maintain image aspect ratio */
   overflow: hidden; /* Prevent overflow issues */
 }
 
@@ -52,19 +53,36 @@
   margin-top: 16px; /* Add spacing between image and text content */
   display: flex;
   flex-direction: column; /* Stack text elements vertically */
-  gap: 12px; /* Add spacing between text elements */
+  padding: 0 16px 16px; /* Add padding to the card body */
+  font-family: europa, sans-serif;
 }
 
 .roo-cards-wrapper > .roo-cards.block > ul > li > .roo-cards-card-body h2 {
-  font-size: 20px; /* Font size for the heading */
+  font-size: 18px; /* Slightly smaller font for 3-column layout */
   color: rgb(28, 29, 30); /* Heading color */
   margin-bottom: 8px; /* Add spacing below the heading */
+  line-height: 1.3; /* Improved line height for readability */
 }
 
-.roo-cards-wrapper > .roo-cards.block > ul > li > .roo-cards-card-body p {
-  font-size: 14px; /* Paragraph font size */
-  color: rgb(81, 81, 81); /* Paragraph color */
+/* First paragraph (date/time) styling */
+.roo-cards-wrapper > .roo-cards.block > ul > li > .roo-cards-card-body p:first-of-type {
+  font-size: 14px; /* Smaller font for the date/time */
+  color: #666; /* Lighter color for the date */
+  line-height: 1.4; /* Improved line height for readability */
+  margin-top: 0;
+}
+
+/* Other paragraphs (content) styling */
+.roo-cards-wrapper > .roo-cards.block > ul > li > .roo-cards-card-body p:not(:first-of-type):not(.button-container) {
+  font-size: 16px; /* Paragraph font size */
+  color: #1c1d1e;
   margin-bottom: 8px; /* Add spacing between paragraphs */
+  line-height: 22.4px; /* Improved line height for readability */
+}
+
+.roo-cards-wrapper > .roo-cards.block > ul > li > .roo-cards-card-body a {
+  color: #1c1d1e;
+  font-size: 20px;
 }
 
 .roo-cards-wrapper > .roo-cards.block > ul > li > .roo-cards-card-body .button-container a {
@@ -73,14 +91,23 @@
   text-decoration: none; /* Remove underline */
   font-weight: bold; /* Emphasize the link */
   align-self: flex-start; /* Align the button to the start of the card body */
+  margin-top: 8px; /* Add some space above the button */
+  font-weight: 400;
 }
 
 .roo-cards-wrapper > .roo-cards.block > ul > li > .roo-cards-card-body .button-container a:hover {
   text-decoration: underline; /* Add underline on hover */
 }
 
+/* Responsive adjustments - now with three breakpoints */
+@media (max-width: 1024px) {
+  .roo-cards-wrapper > .roo-cards.block > ul > li {
+    flex: 0 1 calc(50% - 12px); /* 2 cards per row on medium screens */
+  }
+}
+
 @media (max-width: 768px) {
   .roo-cards-wrapper > .roo-cards.block > ul > li {
-    flex: 0 1 calc(100% - 24px); /* Switch to a single-column layout on smaller screens */
+    flex: 0 1 calc(100% - 0px); /* Switch to a single-column layout on smaller screens */
   }
 }
