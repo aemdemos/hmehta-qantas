@@ -1,0 +1,86 @@
+
+.roo-cards-wrapper {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping to multiple rows */
+  justify-content: flex-start; /* Align cards to the left */
+  gap: 24px; /* Space between rows and columns */
+  padding: 0; /* Remove any default padding */
+  margin: 0 auto; /* Center the container within its parent */
+}
+
+.roo-cards-wrapper > .roo-cards.block {
+  display: flex; /* Use flexbox for overall card arrangement */
+  flex-wrap: wrap; /* Ensure cards wrap into multiple rows */
+  justify-content: flex-start; /* Align cards to the left */
+  gap: 24px; /* Space between cards */
+}
+
+.roo-cards-wrapper > .roo-cards.block > ul {
+  display: flex; /* Use flexbox for arranging the list items */
+  flex-wrap: wrap; /* Allow wrapping to multiple rows */
+  justify-content: flex-start; /* Align cards to the left */
+  gap: 24px; /* Space between cards */
+  padding: 0; /* Remove padding from the list */
+  margin: 0; /* Remove default margin */
+  list-style: none; /* Remove list styling */
+}
+
+.roo-cards-wrapper > .roo-cards.block > ul > li {
+  display: flex; /* Ensure each card is a flex container */
+  flex-direction: column; /* Stack elements vertically within the card */
+  flex: 0 1 calc(48% - 24px); /* Two cards per row with proper spacing */
+  box-sizing: border-box; /* Ensure consistent sizing */
+  background-color: white; /* White background for cards */
+  border: 1px solid #ccc; /* Add a border for separation */
+  border-radius: 8px; /* Optional: Rounded corners */
+  overflow: hidden; /* Prevent content overflow */
+}
+
+.roo-cards-wrapper > .roo-cards.block > ul > li > .roo-cards-card-image {
+  width: 100%; /* Make the image span the full width */
+  aspect-ratio: 16/9; /* Restore original vertical aspect ratio */
+  overflow: hidden; /* Prevent overflow issues */
+}
+
+.roo-cards-wrapper > .roo-cards.block > ul > li > .roo-cards-card-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* Ensure the image fits without distortion */
+}
+
+.roo-cards-wrapper > .roo-cards.block > ul > li > .roo-cards-card-body {
+  margin-top: 16px; /* Add spacing between image and text content */
+  display: flex;
+  flex-direction: column; /* Stack text elements vertically */
+  gap: 12px; /* Add spacing between text elements */
+}
+
+.roo-cards-wrapper > .roo-cards.block > ul > li > .roo-cards-card-body h2 {
+  font-size: 20px; /* Font size for the heading */
+  color: rgb(28, 29, 30); /* Heading color */
+  margin-bottom: 8px; /* Add spacing below the heading */
+}
+
+.roo-cards-wrapper > .roo-cards.block > ul > li > .roo-cards-card-body p {
+  font-size: 14px; /* Paragraph font size */
+  color: rgb(81, 81, 81); /* Paragraph color */
+  margin-bottom: 8px; /* Add spacing between paragraphs */
+}
+
+.roo-cards-wrapper > .roo-cards.block > ul > li > .roo-cards-card-body .button-container a {
+  font-size: 16px; /* Font size for "Read More" link */
+  color: rgb(235, 0, 10); /* Red color for the link */
+  text-decoration: none; /* Remove underline */
+  font-weight: bold; /* Emphasize the link */
+  align-self: flex-start; /* Align the button to the start of the card body */
+}
+
+.roo-cards-wrapper > .roo-cards.block > ul > li > .roo-cards-card-body .button-container a:hover {
+  text-decoration: underline; /* Add underline on hover */
+}
+
+@media (max-width: 768px) {
+  .roo-cards-wrapper > .roo-cards.block > ul > li {
+    flex: 0 1 calc(100% - 24px); /* Switch to a single-column layout on smaller screens */
+  }
+}
