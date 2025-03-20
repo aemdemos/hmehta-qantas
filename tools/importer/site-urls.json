@@ -28,6 +28,14 @@
     {
       "url": "https://www.qantasnewsroom.com.au/media-enquiries/",
       "source": "CRAWL"
+    },
+    {
+      "url": "https://www.qantasnewsroom.com.au/gallery-category/airports-and-lounges/",
+      "source": "CRAWL"
+    },
+    {
+      "url": "https://www.qantasnewsroom.com.au/topics/",
+      "source": "CRAWL"
     }
   ],
   "crawlOptions": {
