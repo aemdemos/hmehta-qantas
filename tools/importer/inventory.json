@@ -573,14 +573,16 @@
       ]
     },
     {
-      "name": "Cards",
+      "name": "roo-cards",
+      "mapping": "cards",
       "cluster": 16,
       "instances": [
         {
           "url": "https://www.qantasnewsroom.com.au/roo-tales/",
           "urlHash": "414b684339d0a040de81ce67d23f830afd06a45d",
           "uuid": "414b6843-02-517a94db4be9e28b45ddc57a88330ab3a851dd0d",
-          "xpath": "/html[1]/body[1]/div[3]/div[1]"
+          "xpath": "/html[1]/body[1]/div[3]/div[1]/div[3]"
+          
         }
       ]
     },
