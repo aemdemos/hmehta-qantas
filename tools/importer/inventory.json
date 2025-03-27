@@ -231,6 +231,18 @@
   ],
   "blocks": [
     {
+      "name": "Cards",
+      "cluster": 24,
+      "instances": [
+        {
+          "url": "https://www.qantasnewsroom.com.au/gallery-category/airports-and-lounges/",
+          "urlHash": "1ebb5f3852928bd7bae920b3cc01f8c5895c2f1d",
+          "uuid": "1ebb5f38-02-517a94db4be9e28b45ddc57a88330ab3a851dd0d",
+          "xpath": "/html[1]/body[1]/div[3]/div[1]/div[3]"
+        }
+      ]
+    },
+    {
       "name": "Columns (two columns)",
       "cluster": 1,
       "instances": [
@@ -653,18 +665,6 @@
           "urlHash": "7c5a3d52c772a066ba59a35439953fcfdb0f4682",
           "uuid": "7c5a3d52-02-19dd1aadf5d627281137c3fbd7bbe0207eb885aa",
           "xpath": "/html[1]/body[1]/div[3]/div[1]/div[1]"
-        }
-      ]
-    },
-    {
-      "name": "Cards",
-      "cluster": 24,
-      "instances": [
-        {
-          "url": "https://www.qantasnewsroom.com.au/gallery-category/airports-and-lounges/",
-          "urlHash": "1ebb5f3852928bd7bae920b3cc01f8c5895c2f1d",
-          "uuid": "1ebb5f38-02-517a94db4be9e28b45ddc57a88330ab3a851dd0d",
-          "xpath": "/html[1]/body[1]/div[3]/div[1]"
         }
       ]
     },
