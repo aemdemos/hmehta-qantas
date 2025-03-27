@@ -1,16 +1,16 @@
 
 .cards-wrapper {
-  display: flex;
-  flex-wrap: wrap; /* Ensure cards wrap into rows */
-  gap: 20px; /* Add consistent spacing between rows and columns */
-  justify-content: center; /* Center the cards horizontally */
+  display: flex; /* Flex container for overall grid */
+  flex-wrap: wrap; /* Allow wrapping to rows */
+  gap: 20px; /* Add spacing between rows and columns */
+  justify-content: center; /* Center-align the cards */
 }
 
 .cards-wrapper > .cards.block > ul {
-  display: flex; /* Flex layout for the card container */
+  display: flex; /* Flex container for the card container */
   flex-wrap: wrap; /* Wrap cards into rows */
   justify-content: center; /* Align cards horizontally */
-  gap: 20px; /* Ensure consistent spacing between cards */
+  gap: 20px; /* Add spacing between cards */
   padding: 0; /* Remove default padding */
   margin: 0; /* Remove default margin */
   list-style: none; /* Remove default list styling */
@@ -18,61 +18,70 @@
 
 .cards-wrapper > .cards.block > ul > li {
   display: flex; /* Flex layout for individual cards */
-  flex-direction: column; /* Stack content vertically */
+  flex-direction: column; /* Stack elements vertically */
   flex: 0 1 calc(33.333% - 20px); /* Ensure three columns in the grid */
   background-color: black; /* Black background for cards */
-  border-radius: 8px; /* Add rounded corners */
+  border-radius: 8px; /* Rounded corners */
   overflow: hidden; /* Prevent overflow */
   margin: 0; /* Remove unnecessary margins */
+  height: auto; /* Allow height to adjust based on content */
 }
 
 .cards-wrapper > .cards.block > ul > li > .cards-card-image {
-  width: 100%; /* Full width for the image section */
+  flex: 0 1 auto; /* Allow the image to take up its own space */
   display: block; /* Block layout for the image */
   line-height: 0; /* Remove line-height gaps */
 }
 
 .cards-wrapper > .cards.block > ul > li img {
-  width: 100%; /* Ensure image spans full width of the card */
+  width: 100%; /* Ensure image spans full width of its container */
   height: auto; /* Maintain aspect ratio */
-  object-fit: cover; /* Fit image within the card */
+  object-fit: cover; /* Crop and center the image */
 }
 
 .cards-wrapper > .cards.block > ul > li > .cards-card-body:nth-of-type(1) {
-  background-color: #e10600; /* Red background for the bar */
+  background-color: #d21e1e; /* Red background */
   color: white; /* White text */
   padding: 10px; /* Add padding for spacing */
-  font-size: 0.9rem; /* Adjust font size */
-  text-transform: uppercase; /* Uppercase text */
-  display: flex; /* Arrange text side by side */
-  justify-content: space-between; /* Space text horizontally */
-  align-items: center; /* Vertically align text */
+  font-size: 0.85rem; /* Uniform font size */
+  text-align: center; /* Center-align text */
 }
 
 .cards-wrapper > .cards.block > ul > li > .cards-card-body:nth-of-type(2),
 .cards-wrapper > .cards.block > ul > li > .cards-card-body:nth-of-type(3) {
-  background-color: black; /* Black background for the text section */
+  background-color: black; /* Black background for text sections */
   color: white; /* White text */
-  padding: 10px; /* Add padding for spacing */
+  text-align: left; /* Left-align text */
+  padding: 16px; /* Increase padding for spacing */
+  font-size: 0.9rem; /* Uniform font size */
+  line-height: 1.5; /* Consistent line height */
 }
 
-.cards-wrapper > .cards.block > ul > li > .cards-card-body p {
-  margin: 0.3rem 0; /* Add consistent spacing between paragraphs */
+.cards-wrapper > .cards.block > ul > li > .cards-card-body p.button-container {
+  text-align: center; /* Center-align button */
+  margin: 10px 0; /* Add spacing around button */
 }
 
-.cards-wrapper > .cards.block > ul > li > .cards-card-body a {
-  color: white; /* Ensure links are white */
-  text-decoration: none; /* Remove underlines */
+.cards-wrapper > .cards.block > ul > li > .cards-card-body p.button-container a {
+  background-color: #d21e1e; /* Red background for button */
+  color: white; /* White text for button */
+  padding: 8px 16px; /* Add padding to button */
+  border-radius: 4px; /* Rounded corners for button */
+  text-decoration: none; /* Remove underline */
+  font-size: 0.85rem; /* Font size for button text */
+  display: inline-block; /* Ensure the button looks like a block element */
 }
 
 @media (max-width: 768px) {
   .cards-wrapper > .cards.block > ul > li {
     flex: 0 1 calc(50% - 20px); /* Adjust to two columns on medium screens */
+    height: auto; /* Allow height to adjust for smaller screens */
   }
 }
 
 @media (max-width: 580px) {
   .cards-wrapper > .cards.block > ul > li {
     flex: 0 1 100%; /* Adjust to single column on small screens */
+    height: auto; /* Allow height to adjust based on content */
   }
 }
